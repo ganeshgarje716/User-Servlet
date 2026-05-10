@@ -1,4 +1,4 @@
-package com.Servlets;
+package com.RegisterServlets;
 
 import java.io.IOException;
 

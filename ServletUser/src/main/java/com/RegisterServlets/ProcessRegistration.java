@@ -1,4 +1,4 @@
-package com.Servlets;
+package com.RegisterServlets;
 
 import java.io.IOException;
 
@@ -17,16 +17,22 @@ public class ProcessRegistration extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		req.getParameter("name");
+		String name = req.getParameter("name");
 		
-		req.getParameter("email");
+		String email = req.getParameter("email");
 		
-		req.getParameter("password");
+		String password = req.getParameter("password");
 		
-		req.getParameter("gender");
+		String gender = req.getParameter("gender");
 		
-		req.getParameter("city");
+		String city = req.getParameter("city");
 		
+		
+		System.out.println(name);
+		System.out.println(email);
+		System.out.println(password);
+		System.out.println(gender);
+		System.out.println(city);
 		
 	}
 	
