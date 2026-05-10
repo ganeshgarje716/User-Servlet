@@ -102,6 +102,8 @@ input:focus, select:focus{
 
 <form action="registration" method="post">
 
+<p style="color: ">${msg}</p>
+
 <table>
 
 <tr>
