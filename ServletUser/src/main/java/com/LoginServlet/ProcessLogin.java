@@ -31,6 +31,8 @@ public class ProcessLogin extends HttpServlet{
 		try {
 			if (rs.next()) {
 				
+				String username = rs.getString("email");
+				req.setAttribute("email", username);
 				req.getRequestDispatcher("profile.jsp").forward(req, resp);
 			}
 			else {

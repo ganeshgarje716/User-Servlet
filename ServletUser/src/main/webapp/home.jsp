@@ -118,7 +118,7 @@ body{
 <div id="rl">
 
 	<a id="register" href="register-form">Register</a>
-	<a id="login" href="login-form">Login</a>
+	<a id="login" href="login.jsp">Login</a>
 
 </div>
 
