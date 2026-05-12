@@ -2,6 +2,7 @@ package com.Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.Entity.User;
@@ -11,6 +12,36 @@ public class UserDao {
 	
 	
 	Connection con=JDBCConnection.getConnection();
+	
+	
+	public ResultSet login(String email, String password) {
+		
+		ResultSet rs=null;
+		try {
+			
+			PreparedStatement pst = con.prepareStatement("select * from user where email=? and password=?");
+			
+			pst.setString(1, email);
+			pst.setString(2, password);
+			
+			 rs = pst.executeQuery();
+		}
+		catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return rs;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

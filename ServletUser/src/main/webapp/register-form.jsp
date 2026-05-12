@@ -19,27 +19,49 @@ body{
 	background: linear-gradient(135deg, #00FFCC, #4facfe);
 }
 
-h1{
+/* NAVBAR */
+
+#navbar{
+	width: 100%;
 	height: 100px;
-	line-height: 100px;
-	text-align: center;
 	background-color: yellow;
-	color: black;
-	box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 60px;
 }
 
-div{
+#logo h1{
+	font-size: 28px;
+	color: black;
+}
+
+#links{
+	display: flex;
+	gap: 30px;
+}
+
+#links a{
+	text-decoration: none;
+	color: black;
+	font-size: 18px;
+	padding: 6px 12px;
+	border-radius: 6px;
+	transition: 0.3s;
+}
+
+#links a:hover{
+	background-color: rgba(0,0,0,0.1);
+}
+
+/* FORM BOX */
+
+#form-box{
 	width: 450px;
 	margin: 60px auto;
 	padding: 30px;
 	background-color: white;
 	border-radius: 15px;
-	box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-	transition: 0.3s;
-}
-
-div:hover{
-	transform: translateY(-5px);
 }
 
 table{
@@ -49,7 +71,6 @@ table{
 
 td{
 	padding: 10px;
-	background-color: white;
 	font-size: 16px;
 }
 
@@ -59,14 +80,6 @@ input, select{
 	padding-left: 10px;
 	border-radius: 8px;
 	border: 1px solid #ccc;
-	background-color: white;
-	transition: 0.3s;
-}
-
-input:focus, select:focus{
-	border: 1px solid #007bff;
-	outline: none;
-	box-shadow: 0px 0px 5px #007bff;
 }
 
 .gender{
@@ -80,15 +93,10 @@ input:focus, select:focus{
 	height: 45px;
 	border: none;
 	border-radius: 8px;
-	background: linear-gradient(45deg, #007bff, #00c6ff);
+	background-color: #007bff;
 	color: white;
 	font-size: 18px;
 	cursor: pointer;
-	transition: 0.3s;
-}
-
-#btn:hover{
-	transform: scale(1.05);
 }
 
 </style>
@@ -96,13 +104,26 @@ input:focus, select:focus{
 </head>
 <body>
 
-<h1>Register Form</h1>
+<div id="navbar">
 
-<div>
+	<div id="logo">
+		<h1>Register Form</h1>
+	</div>
+
+	<div id="links">
+	    <a href="home.jsp">Home</a>
+		<a href="register-form.jsp">Register</a>
+		<a href="login.jsp">Login</a>
+		<a href="">Contact</a>
+	</div>
+
+</div>
+
+<div id="form-box">
 
 <form action="registration" method="post">
 
-<p style="color: ">${msg}</p>
+<p>${msg}</p>
 
 <table>
 
@@ -131,6 +152,7 @@ input:focus, select:focus{
 	<td>Choose Gender :</td>
 	<td>
 		<input class="gender" type="radio" name="gender" value="Male"> Male
+
 		<input class="gender" type="radio" name="gender" value="Female"> Female
 	</td>
 </tr>

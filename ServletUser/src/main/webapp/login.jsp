@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Register Form</title>
+<title>Login Form</title>
 
 <style>
 
@@ -15,113 +15,137 @@
 	font-family: Arial, sans-serif;
 }
 
+/* BACKGROUND */
 body{
 	background: linear-gradient(135deg, #00FFCC, #4facfe);
+	min-height: 100vh;
 }
 
-h1{
+/* NAVBAR */
+#navbar{
+	width: 100%;
 	height: 100px;
-	line-height: 100px;
-	text-align: center;
 	background-color: yellow;
-	color: black;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 50px;
 	box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
 }
 
-div{
-	width: 450px;
-	margin: 60px auto;
+/* TITLE */
+#logo h1{
+	font-size: 24px;
+	color: black;
+}
+
+/* LINKS */
+#links{
+	display: flex;
+	gap: 20px;
+}
+
+#links a{
+	text-decoration: none;
+	color: black;
+	font-size: 17px;
+	padding: 6px 12px;
+	border-radius: 6px;
+	transition: 0.3s;
+}
+
+#links a:hover{
+	background-color: rgba(0,0,0,0.1);
+}
+
+/* FORM BOX */
+.form-box{
+	width: 420px;
+	margin: 70px auto;
 	padding: 30px;
 	background-color: white;
 	border-radius: 15px;
 	box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-	transition: 0.3s;
 }
 
-div:hover{
-	transform: translateY(-5px);
-}
-
+/* TABLE */
 table{
 	width: 100%;
-	background-color: white;
+	border-collapse: collapse;
 }
 
 td{
 	padding: 10px;
-	background-color: white;
 	font-size: 16px;
 }
 
-input, select{
+/* INPUT */
+input{
 	width: 100%;
-	height: 40px;
-	padding-left: 10px;
+	height: 42px;
+	padding: 8px;
 	border-radius: 8px;
 	border: 1px solid #ccc;
-	background-color: white;
-	transition: 0.3s;
 }
 
-input:focus, select:focus{
+input:focus{
 	border: 1px solid #007bff;
 	outline: none;
-	box-shadow: 0px 0px 5px #007bff;
 }
 
-.gender{
-	width: auto;
-	height: auto;
-	margin-right: 8px;
-}
-
+/* BUTTON */
 #btn{
 	width: 100%;
 	height: 45px;
 	border: none;
 	border-radius: 8px;
-	background: linear-gradient(45deg, #007bff, #00c6ff);
+	background: #fc466b;
 	color: white;
 	font-size: 18px;
 	cursor: pointer;
-	transition: 0.3s;
 }
 
-#btn:hover{
-	transform: scale(1.05);
-}
+
 
 </style>
 
 </head>
 <body>
 
-<h1>Login Form</h1> 
+<!-- NAVBAR -->
+<div id="navbar">
 
-<div>
+	<div id="logo">
+		<h1>Login Form</h1>
+	</div>
 
-<form action="registration" method="post">
+	<div id="links">
+	    <a href="home.jsp">Home</a>
+		<a href="register-form.jsp">Register</a>
+		<a href="login.jsp">Login</a>
+		<a href="">Contact</a>
+	</div>
 
-<p style="color: green">${msg}</p>
+</div>
+
+<!-- FORM -->
+<div class="form-box">
+
+<form action="Process-login" method="post">
+
+<p style="color: red">${msg}</p>
 
 <table>
 
-
-
 <tr>
-	<td>Enter Email :</td>
-	<td>
-		<input type="email" placeholder="Enter Email" name="email">
-	</td>
+	<td>Email :</td>
+	<td><input type="email" name="email" placeholder="Enter Email"></td>
 </tr>
 
 <tr>
-	<td>Enter Password :</td>
-	<td>
-		<input type="password" placeholder="Enter Password" name="password">
-	</td>
+	<td>Password :</td>
+	<td><input type="password" name="password" placeholder="Enter Password"></td>
 </tr>
-
 
 <tr>
 	<td colspan="2">
